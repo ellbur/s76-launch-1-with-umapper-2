@@ -1,6 +1,7 @@
 
 #include "mapping.h"
 #include "keys.h"
+#include <inttypes.h>
 
 static void release_modifiers(modifier_set mask, event_callback_t *cb, void *data) {
   if (mask & LEFT_SHIFT_MASK) cb(data, RELEASED, KC_LSHIFT);
@@ -211,7 +212,7 @@ static void do_release(struct layout const *layout, struct state *state, key_cod
   }
 }
 
-void step(struct layout const *layout, struct state *state, enum event_type t, key_code k, event_callback_t *cb, void *data) {
+void step(struct layout const *layout, struct state *state, enum event_type t, uint16_t k, event_callback_t *cb, void *data) {
   if (t == PRESSED) {
     do_press(layout, state, k, cb, data);
   }

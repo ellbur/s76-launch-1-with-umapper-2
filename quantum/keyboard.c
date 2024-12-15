@@ -32,6 +32,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "sendchar.h"
 #include "eeconfig.h"
 #include "action_layer.h"
+#include "../umapper/main.h"
 #ifdef BOOTMAGIC_ENABLE
 #    include "bootmagic.h"
 #endif
@@ -494,6 +495,7 @@ void keyboard_init(void) {
 #endif
 
     keyboard_post_init_kb(); /* Always keep this last */
+    umapper_init();
 }
 
 /** \brief key_event_task

@@ -3,6 +3,7 @@
 
 #include "layouts.h"
 #include "event.h"
+#include <inttypes.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -46,7 +47,7 @@ struct state {
 
 typedef void event_callback_t(void *data, enum event_type, key_code);
 
-void step(struct layout const *layout, struct state *state, enum event_type t, key_code k, event_callback_t *cb, void *data);
+void step(struct layout const *layout, struct state *state, enum event_type t, uint16_t k, event_callback_t *cb, void *data);
 
 #ifdef __cplusplus
 }
