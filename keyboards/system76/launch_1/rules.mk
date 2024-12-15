@@ -10,5 +10,9 @@ RGB_MATRIX_CUSTOM_KB = yes  # Custom keyboard effects
 SRC += system76_ec.c usb_mux.c
 I2C_DRIVER_REQUIRED = yes
 
-SRC += ../../umapper/mapping.c ../../umapper/debugging.c ../../umapper/layout-definitions.c ../../umapper/vanilla-layout.c ../../umapper/main.c
+SRC += \
+	umapper/mapping.c \
+	umapper/layout-definitions.c \
+	umapper/vanilla-layout.c \
+	umapper/main.c
 
