@@ -55,7 +55,7 @@ void umapper_action_exec(keyevent_t event) {
   };
   
   if (event.key.row < VANILLA_LAYOUT_ROWS && event.key.col < VANILLA_LAYOUT_COLS) {
-    key_code k = vanilla_layout[event.key.row][event.key.col];
+    uint16_t k = vanilla_layout[event.key.row][event.key.col];
     
     if (k != 0) {
       step(&our_layout, &state, event.pressed ? PRESSED : RELEASED, k, output_event_routine, 0);
